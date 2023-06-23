@@ -27,6 +27,37 @@ If using a revC/D version, you MUST set the 'CARD_TYPE' parameter to 3 (revC) or
 
 Production hexes are placed in the hexs subdirectory, named with their version and type.
 
+# Board
+Board : Default : Wyres W_BLE_BASE rev A board using Minew MS50SFA2 module, which uses a QFN48 chip
+```
+Pinouts: (module pin/nrf pin designation / QFN48 pin)
+CN1 (grove) - UART - P1 is square
+ P1 - GND
+ P2 - VCC
+ P3 - UART TX (pin 14 / P0.17 / 20)
+ P4 - UART RX (pin 15 / P0.18 / 21)
+
+CN3 (grove) - I2C  - P1 is square
+ P1 - GND
+ P2 - VCC
+ P3 - SDA (pin 12 / P0.11 / 14)
+ P4 - SCL (pin 13 / P0.12 / 15)
+
+CN2 : SWD - P1 is leftmost pad with CN2 at bottom
+ P1 - SWDIO (26)
+ P2 - SWCLK (25)
+ P3 - 3.3V
+ P4 - GND
+ P5 - nRST (24)
+ 
+CN4 : IO - P1 top left viewed from above with BLE antenna upwards
+ P1 - GPIO (pin 2 / P0.27 / 39)		P2 - GND
+ P3 - GPIO (pin 3 / P0.28 /	40)	    P4 - GPIO (pin 18 / P0.21 / 24)
+ P5 - GPIO (pin 4 / P0.29 / 41)		P6 - GPIO (pin 5 / P0.30 / 42)
+ P7 - GPIO (pin 6 / P0.10 /	12)	    P8 - GPIO (pin 7 / P0.09 / 11)
+ P9 - GPIO (pin 8 / P0.03 / 5 )		P10- GPIO (pin 9 / P0.04 / 6)
+```
+
 ## flashing with ST-LINK
 
 Attach ST-Link to the target and run "flash_w_stlink.bat" (in script) with arguments of the hex file (path from project root, without the suffix), and default major/minor  as 4 digit hex values
